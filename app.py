@@ -5,19 +5,12 @@ from euriai.langchain import create_chat_model   # ✅ Use Euri, not OpenAI
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
+from src.prompt import *
 from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 
-# -----------------------------
-# Define system prompt here
-# -----------------------------
-system_prompt = """
-You are a Medical Assistant for question-answering tasks. 
-Use the provided context to answer questions accurately.
-If you do not know the answer, politely say you don't know.
-"""
 
 # Load environment variables
 load_dotenv()
